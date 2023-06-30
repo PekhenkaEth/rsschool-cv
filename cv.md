@@ -1,5 +1,5 @@
 # Denis Grass
-<img src="https://media.tenor.com/WcX6D6YNjkIAAAAd/andrew-tate.gif" height="300px"> 
+<img src="Photo.png" height="300px"> 
 
 *discord: eth.1*
 
