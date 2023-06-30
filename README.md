@@ -1,1 +1,1 @@
-# rsschool-cv
+https://PekhenkaEth.github.io/rsschool-cv/cv
