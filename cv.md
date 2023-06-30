@@ -15,13 +15,13 @@ Below I have given examples of what I have worked with. But to be clear: I have 
 
 **Briefly about what I had experience with:**
 
-*using and code simple parse3s with adding webhooks to discord
+* using and code simple parse3s with adding webhooks to discord
 
-*creating requests/selenium bots that spam API sites for making orders, where speed was important 
+* creating requests/selenium bots that spam API sites for making orders, where speed was important 
 
-*reverse engineering with nike website, to bypass cloudflare
+* reverse engineering with nike website, to bypass cloudflare
 
-*web3 contract deployments
+* web3 contract deployments
 
 ___
 ## SKILLS
@@ -121,5 +121,3 @@ ___
 __Bachelor's Degree in Software Engineering (2014-2018)__
 
 __Master Degree in Finance and Credit (2019-2021)__
-# Denis Grass
-<img src="cobra-tate-cobra.gif" height="300px"3
