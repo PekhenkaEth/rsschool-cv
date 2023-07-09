@@ -2,4 +2,290 @@
     padding: 0;
     margin: 0;
     }
-  
+
+  body{
+    font-family: 'Courier New', Courier;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    background-color: black;
+    color:rgb(68, 211, 68);
+    width: 1280px;
+    margin: 0 auto;
+    border: 1px solid rgb(68, 211, 68);
+    font-weight: bold;
+  }
+
+
+
+  .photo img{
+    border-radius: 100%;
+    width: 100%;
+  }
+
+  nav{
+    display: block;
+  }
+  .menu{
+    width: 100%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    margin: auto;
+    border-bottom: 1px solid rgb(68, 211, 68);
+  }
+
+  .list {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+  }
+
+  .list a{
+    text-decoration: none;
+    color:rgb(68, 211, 68);
+    font-size: 35px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 4px rgb(0, 255, 0);
+    transition: .2s;
+  }
+
+  .list a:hover{
+    text-decoration: none;
+    color:rgb(68, 211, 68);
+    font-size: 35x;
+    font-weight: bolder;
+    text-shadow: 0px 1px 4px rgb(0, 255, 0), 3px 0px 7px rgb(184, 255, 193);
+
+  }
+
+  .sec1{
+    display: flex;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    border-bottom: 1px solid rgb(68, 211, 68);
+  }
+
+  .photo{
+    width: 30%;
+    margin-left: 5%;
+  }
+  .name h1{
+    font-weight: bold;
+
+    font-size: 70px;
+
+  }
+
+  .name{
+    width: 70%;
+    margin-left: 5%;
+  }
+
+  .name p{
+    text-align: justify;
+  }
+
+  .conatctslist{
+    list-style-type: none;
+    border: 1px solid rgb(68, 211, 68);
+    border-right: 0px;
+    padding: 10px;
+  }
+  .conatctslist_item{
+    display: flex;
+    align-items: center;
+  }
+  .conatctslist_item:not(:last-child) {
+    margin-bottom: 10px;
+    }
+
+  .contacts img{
+    width: 32px;
+
+  }
+  .contacts span{
+    margin-left: 2%;
+    font-size: 24px;
+
+  }
+
+  .aboutblock{
+    display: flex;
+
+  }
+
+  .about{
+    width: 50%;
+    border-right: 1px solid rgb(68, 211, 68);
+    border-bottom: 1px solid rgb(68, 211, 68);
+
+  }
+
+  .about h2{
+    font-size: 40px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+  }
+
+  .about p{
+    font-size: 19px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+  }
+  .about1{
+    width: 50%;
+    border-bottom: 1px solid rgb(68, 211, 68);
+    list-style-type: none;
+  }
+
+  .about1 h2{
+    font-size: 40px;
+    margin-left: 5%;
+    margin-bottom: 2%;
+
+  }
+  .about1_items{
+    list-style-type:disclosure-closed;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    font-size: 19px;
+  }
+
+  .abouts{
+    padding: 20px;
+  }
+  .aboutlist{
+    margin-bottom: 3px;
+  }
+
+  .skills{
+    border-bottom: 1px solid rgb(68, 211, 68);
+    padding: 20px;
+  }
+  .skillsh2{
+    font-size: 40px;
+    margin-left: 2.5%;
+    margin-bottom: 1%;
+  }
+
+  .skillsul{
+    margin-left: 2.5%;
+    font-size: 24px;
+    list-style-type: none;
+  }
+
+  .skcontainer{
+    border: 2px solid rgb(68, 211, 68);
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgb(68, 211, 68) 30%, #000000 1%);
+    width: 49%;
+    margin-top: 1%;
+  }
+
+  .python {
+
+    border-radius: 15px;
+    margin-left: -1px;
+    line-height: 20px;
+    width: 30%;
+    color:rgb(29, 102, 29);
+    text-align: center;
+  }
+  .py{
+    font-size: 25px;
+    line-height: 20px;
+  }
+  .skleng{
+    margin-top: 28px;
+  }
+
+  #code{
+    padding: 20px;
+    border-bottom: 2px;
+    border-bottom: 1px solid rgb(68, 211, 68);
+  }
+
+  .code{
+    font-size: 40px;
+    margin-left: 2.5%;
+
+
+  }
+
+  .codeexp{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+  }
+
+  .lastblock{
+    display: flex;
+    border-bottom: 1px solid rgb(68, 211, 68);
+  }
+
+
+  .projects{
+    padding: 20px;
+    width: 50%;
+    border-right: 1px solid rgb(68, 211, 68);
+    text-align: center;
+  }
+
+  .projects h2{
+    font-size: 40px;
+    margin-left: 2.5%;
+    margin-bottom: 1%;
+  }
+
+  .cvlink{
+    text-decoration: none;
+    color:rgb(68, 211, 68);
+    font-size: 40px;
+    font-weight: bolder;
+    text-shadow: 3px 0px 3px rgb(220, 255, 220);
+    margin-left: 2.5%;
+    letter-spacing: 10px;
+    transition: .5s;
+  }
+
+  .cvlink:hover{
+    text-decoration: none;
+    color:rgb(68, 211, 68);
+    font-size: 40px;
+    font-weight: bolder;
+    text-shadow: 0px 1px 4px rgb(0, 255, 0), 3px 0px 7px rgb(184, 255, 193);
+    margin-left: 2.5%;
+    letter-spacing: 10px;
+  }
+
+  #education{
+    padding: 20px;
+    margin-left: 2.5%;
+    width: 50%;
+  }
+
+  .edu{
+    font-size: 40px;
+    margin-bottom: 1%;
+  }
+
+  .eduabout{
+    font-size: 19px;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .picture{
+    margin-left: -60px;
+  }
+
+  .footer span{
+    font-size: 29px;
+    margin-top: 20px;
+  }

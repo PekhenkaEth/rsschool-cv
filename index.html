@@ -1,10 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.0, no">
+    <title>CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/dark.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <header class="menu">
+        <nav>
+            <ul class="list">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#code">Code snippet</a></li>
+                <li><a href="#projects">My projects</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <main>
+        <section class="sec1">
+            <div class="photo">
+                <img src="media/photo1.png" alt="My photo">
+            </div>
+            <div class="name">
+                <h1>Denis Grass</h1>
+                <div class="contacts">
+                    <ul class="conatctslist">
+                        <li class="conatctslist_item"><img src="media/discordlogo.png" alt="discord-logo"><span>eth.1</span></li>
+                        <li class="conatctslist_item"><img src="media/mail.png" alt="mail-logo"><span>craninft@gmail.com</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="aboutblock">
+                <div id="about" class="about abouts" >
+                    <h2>About Me</h2>
+                    <p>
+                        I have been working online for over 4 years. Indirectly connected with the IT sphere. I have the most minimal general knowledge. To implement everything that I have given, I used Google, YouTube, AI.
+                    </p>
+                </div>
+                <div class="about1 abouts" >
+                    <h2><b>Briefly my experience:</b></h2>
+                    <ul class="about1_items">
+                        <li class="aboutlist">using and code simple parse3s with adding webhooks to discord</li>
+                        <li class="aboutlist">creating requests/selenium bots that spam API sites for making orders, where speed was important</li>
+                        <li class="aboutlist">reverse engineering with nike website, to bypass cloudflare</li>
+                        <li>web3 contract deployments</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="skills" class="skills">
+                <h2 class="skillsh2">Skills</h2>
+                <ul class="skillsul">
+                    <li><span>Python (requests,selenium)</span>
+                    <div class="skcontainer">
+                        <div class="python"><span class="py">30%</span></div>
+                    </div>
+                    </li>
+                    <li class="skleng">English B1</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div id="code">
+                <h2 class="code">Code Snippet</h2>
+                <pre class="codeexp">
+                    <code class="language-python">
+import os
+import asyncio
+import aiohttp
+
+# Get the path to the directory where the script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the path to the cookies file
+cookies_file_path = os.path.join(script_dir, 'Cookies.txt')
+
+# Read the cookies from the file
+with open(cookies_file_path, 'r') as file:
+    cookies_list = file.read().splitlines()
+
+# Ask user for Mint link
+mint_link = input("Mint link: ")
+
+# Construct the URL and Referer using the mint_link value
+url = f'https://inscribenow.io/collections/{mint_link}/mint?c=5'
+referer = f'https://inscribenow.io/collections/{mint_link}'
+
+headers = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+    'Dnt': '1',
+    'Referer': referer,
+    'Sec-Ch-Ua': '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"',
+    'Sec-Ch-Ua-Mobile': '?0',
+    'Sec-Ch-Ua-Platform': '"Windows"',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'same-origin',
+    'Sec-Fetch-User': '?1',
+    'Upgrade-Insecure-Requests': '1',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+}
+
+# Ask user for desired quantity
+desired_quantity = input("How many requests you want to send? ")
+
+# Convert input to an integer
+desired_quantity = int(desired_quantity)
+
+# Function to send request with a cookie
+async def send_request(cookie):
+    try:
+        payload = {'c': str(desired_quantity)}
+        headers['Cookie'] = cookie
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, params=payload, headers=headers) as response:
+                status = response.status
+                print('Request sent for cookie:', cookie, 'Status:', status)
+
+    except aiohttp.ClientError as e:
+        print('An error occurred for cookie', cookie + ':', str(e))
+
+# Main function to send requests
+async def main():
+    # Create tasks for sending requests with each cookie
+    tasks = [send_request(cookie) for cookie in cookies_list]
+
+    # Wait for all tasks to complete
+    await asyncio.gather(*tasks)
+
+# Create an event loop
+loop = asyncio.get_event_loop()
+
+# Function wrapper to run the event loop
+def run_main():
+    loop.run_until_complete(main())
+
+# Run the program
+if __name__ == '__main__':
+    run_main()
+                    </code>
+                </pre>
+            </div>
+        </section>
+
+        <section>
+            <div class="lastblock">
+                <div id="projects" class="projects">
+                    <h2>My projects</h2>
+                    <a href="github.com/cv" class="cvlink">CV</a>
+                </div>
+                <div id="education">
+                    <h2 class="edu">Education</h2>
+
+                    <div class="eduabout">
+                        <p>Bachelor's Degree in Software Engineering</p>
+                        <p>(2014-2018)</p>
+                        <p>Master Degree in Finance and Credit</p>
+                        <p>(2019-2021)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+        <a href="https://rs.school/js/" target="_blank"><img src="media/rs_school_js.png" alt="school-logo" width="120"></a>
+        <a href="https://github.com/PekhenkaEth" target="_blank"><img src="media/github.png" alt="school-logo" width="55" class="picture"></a>
+        <span>2023.</span>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </body>
 </html>
